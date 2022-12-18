@@ -5,8 +5,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
-    @IBOutlet private var NoButton: UIButton!
-    @IBOutlet private var YesButton: UIButton!
+    @IBOutlet private var noButton: UIButton!
+    @IBOutlet private var yesButton: UIButton!
     
     private var correctAnswers: Int = 0
     private var currentQuestionIndex = 0
@@ -62,22 +62,23 @@ final class MovieQuizViewController: UIViewController {
         
     }
     @IBAction private func noButtonClicked(_ sender: Any) {
-        YesButton.isEnabled.toggle()
-        NoButton.isEnabled.toggle()
+        yesButton.isEnabled.toggle()
+        noButton.isEnabled.toggle()
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = false
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     @IBAction private func yesButtonClicked(_ sender: Any) {
-        YesButton.isEnabled.toggle()
-        NoButton.isEnabled.toggle()
+        yesButton.isEnabled.toggle()
+        noButton.isEnabled.toggle()
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = true
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
     
     private func showAnswerResult(isCorrect: Bool) {
+        imageView.layer.cornerRadius = 20
         if isCorrect {
             correctAnswers += 1
             imageView.layer.borderColor = UIColor.ypGreen.cgColor
@@ -95,8 +96,8 @@ final class MovieQuizViewController: UIViewController {
         }
     }
     private func showNextQuestionOrResults() {
-        YesButton.isEnabled.toggle()
-        NoButton.isEnabled.toggle()
+        yesButton.isEnabled.toggle()
+        noButton.isEnabled.toggle()
         if currentQuestionIndex == questions.count - 1 {
             let text = "Ваш результат: \(correctAnswers) из 10"
             let viewModel = QuizResultsViewModel(
