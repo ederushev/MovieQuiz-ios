@@ -21,7 +21,7 @@ final class StatisticServiceImplementation: StatisticService {
         if bestGame < newGame {
             bestGame = newGame
         }
-        if gamesCount != 0 { // если игра первая то totalAccuracy = точности в первой игре
+        if gamesCount != 0 {
             totalAccuracy = (Double(totalAccuracy) * Double(gamesCount) + Double(newGame.correct) / Double(newGame.total)) / Double(gamesCount + 1)
         } else {
             totalAccuracy = (Double(newGame.correct) / Double(newGame.total))
@@ -35,15 +35,15 @@ final class StatisticServiceImplementation: StatisticService {
     private let userDefaults = UserDefaults.standard
     
     var totalAccuracy: Double {
-        get { userDefaults.double(forKey: "totalAccuracy") }
+        get { userDefaults.double(forKey: Keys.total.rawValue) }
           
-        set { userDefaults.set(newValue, forKey: "totalAccuracy") }
+        set { userDefaults.set(newValue, forKey: Keys.total.rawValue) }
     }
     
     var gamesCount: Int {
-        get { userDefaults.integer(forKey: "gamesCount") }
+        get { userDefaults.integer(forKey: Keys.gamesCount.rawValue)}
           
-        set { userDefaults.set(newValue, forKey: "gamesCount") }
+        set { userDefaults.set(newValue, forKey: Keys.gamesCount.rawValue) }
     }
     
     var bestGame: GameRecord {

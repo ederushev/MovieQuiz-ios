@@ -95,7 +95,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
         noButton.isEnabled.toggle()
         if currentQuestionIndex == questionsAmount - 1 {
             guard let statisticService = statisticService else { return }
-                       statisticService.store(correct: correctAnswers, total: questionsAmount)
+                        statisticService.store(correct: correctAnswers, total: questionsAmount)
 
             let totalAccuracyPercentage = String(format: "%.2f", statisticService.totalAccuracy * 100) + "%"
             let localizedTime = statisticService.bestGame.date.dateTimeString
@@ -108,7 +108,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
                        Рекорд: \(bestGameStats) (\(localizedTime))
                        Средняя точность: \(totalAccuracyPercentage)
                        """
-            //let text = "Ваш результат: \(correctAnswers) из 10"
             let alert = AlertModel(title: "Этот раунд окончен!", message: text, buttonText: "Сыграть еще раз") { [weak self] in
                 guard let self = self else { return }
 
