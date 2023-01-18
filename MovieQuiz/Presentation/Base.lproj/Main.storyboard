@@ -122,11 +122,16 @@
                                 </subviews>
                                 <color key="backgroundColor" name="YP Background (iOS)"/>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-vI-ENW">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black (iOS)"/>
                         <color key="tintColor" name="YP Black (iOS)"/>
                         <constraints>
+                            <constraint firstItem="2XQ-vI-ENW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0dG-Ci-mZ7"/>
+                            <constraint firstItem="2XQ-vI-ENW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPu-Zu-OA1"/>
                             <constraint firstItem="siG-SL-4KO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="amn-oP-Yxr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="siG-SL-4KO" secondAttribute="trailing" constant="20" id="daq-3s-edp"/>
                             <constraint firstItem="siG-SL-4KO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="lhR-bE-v49"/>
@@ -135,6 +140,7 @@
                     <connections>
                         <outlet property="NoButton" destination="Et9-g5-2R6" id="2ct-42-3Xg"/>
                         <outlet property="YesButton" destination="Cdc-KF-chm" id="THM-ad-Ykl"/>
+                        <outlet property="activityIndicator" destination="2XQ-vI-ENW" id="TCP-bk-R5e"/>
                         <outlet property="counterLabel" destination="zrm-0m-EVf" id="wzY-mY-Ccg"/>
                         <outlet property="imageView" destination="evh-6B-fGJ" id="h7C-US-W61"/>
                         <outlet property="textLabel" destination="CAY-CE-GdL" id="Diy-YW-O0k"/>
