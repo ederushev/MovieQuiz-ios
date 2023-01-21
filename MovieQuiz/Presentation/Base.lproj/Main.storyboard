@@ -60,8 +60,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0R-vr-dD7">
                                         <rect key="frame" x="0.0" y="624.5" width="374" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAY-CE-GdL" userLabel="Question Label">
-                                                <rect key="frame" x="86.5" y="13" width="245.5" height="54"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Рейтинг этого фильма меньше чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAY-CE-GdL" userLabel="Question Label">
+                                                <rect key="frame" x="0.0" y="13" width="374" height="54"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                                 <color key="textColor" name="YP White (iOS)"/>
                                                 <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                             <constraint firstItem="CAY-CE-GdL" firstAttribute="top" secondItem="D0R-vr-dD7" secondAttribute="top" constant="13" id="8wa-J1-GVd"/>
                                             <constraint firstItem="CAY-CE-GdL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D0R-vr-dD7" secondAttribute="leading" constant="20" symbolic="YES" id="bFl-71-3KL"/>
                                             <constraint firstAttribute="bottom" secondItem="CAY-CE-GdL" secondAttribute="bottom" constant="13" id="fIS-tg-pVb"/>
-                                            <constraint firstAttribute="trailing" secondItem="CAY-CE-GdL" secondAttribute="trailing" constant="42" id="fkI-Ue-FaX"/>
+                                            <constraint firstAttribute="trailing" secondItem="CAY-CE-GdL" secondAttribute="trailing" constant="20" id="fkI-Ue-FaX"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Yl-Iv-nbl">

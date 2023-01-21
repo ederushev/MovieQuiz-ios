@@ -8,7 +8,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     @IBOutlet private var counterLabel: UILabel!
     @IBOutlet private var noButton: UIButton!
     @IBOutlet private var yesButton: UIButton!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     private var correctAnswers: Int = 0
     private var currentQuestionIndex = 0
@@ -41,16 +41,16 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     }
     private func showLoadingIndicator() {
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating() // включаем анимацию
+        activityIndicator.startAnimating()
     }
     
     func didLoadDataFromServer() {
-        activityIndicator.isHidden = true // скрываем индикатор загрузки
+        activityIndicator.isHidden = true
         questionFactory?.requestNextQuestion()
     }
     
     func didFailToLoadData(with error: Error) {
-        showNetworkError(with: error.localizedDescription) // возьмём в качестве сообщения описание ошибки
+        showNetworkError(with: error.localizedDescription)
     }
     
     
@@ -66,7 +66,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             self.currentQuestionIndex = 0
             self.correctAnswers = 0
             self.activityIndicator.startAnimating()
-            self.questionFactory?.requestNextQuestion()
+            self.questionFactory?.loadData()
         }
         
         alertPresenter?.showAlert(model: model)
@@ -149,10 +149,10 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             let alert = AlertModel(title: "Этот раунд окончен!", message: text, buttonText: "Сыграть еще раз") { [weak self] in
                 guard let self = self else { return }
 
-                self.currentQuestionIndex = 0 // сброс счета
+                self.currentQuestionIndex = 0 
                 self.correctAnswers = 0
 
-                self.questionFactory?.requestNextQuestion()  // заново показываем первый вопрос
+                self.questionFactory?.requestNextQuestion()
             }
 
 
