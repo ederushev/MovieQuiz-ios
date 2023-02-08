@@ -26,10 +26,7 @@ class QuestionFactory: QuestionFactoryProtocol {
                 imageData = try Data(contentsOf: movie.resizedImageURL)
             } catch {
    
-                DispatchQueue.main.async {
-                    
-                    self.delegate?.showNetworkError(with: "Failed to load image")
-                }
+        
             }
             let randomCompare = Bool.random()
             let rating = Float(movie.rating) ?? 0
