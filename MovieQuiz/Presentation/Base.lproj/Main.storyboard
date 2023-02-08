@@ -39,6 +39,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrm-0m-EVf" userLabel="Index Label">
                                                 <rect key="frame" x="338" y="0.0" width="36" height="23.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Index"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="textColor" name="YP White (iOS)"/>
                                                 <nil key="highlightedColor"/>
@@ -48,6 +49,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="evh-6B-fGJ" userLabel="Preview Image">
                                         <rect key="frame" x="0.0" y="43.5" width="374" height="561"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Poster"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="evh-6B-fGJ" secondAttribute="height" multiplier="2:3" id="4Hm-bV-l9g"/>
                                         </constraints>
@@ -61,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="624.5" width="374" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAY-CE-GdL" userLabel="Question Label">
-                                                <rect key="frame" x="86.5" y="13" width="245.5" height="54"/>
+                                                <rect key="frame" x="42" y="13" width="290" height="54"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                                 <color key="textColor" name="YP White (iOS)"/>
                                                 <nil key="highlightedColor"/>
@@ -69,7 +71,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="CAY-CE-GdL" firstAttribute="top" secondItem="D0R-vr-dD7" secondAttribute="top" constant="13" id="8wa-J1-GVd"/>
-                                            <constraint firstItem="CAY-CE-GdL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D0R-vr-dD7" secondAttribute="leading" constant="20" symbolic="YES" id="bFl-71-3KL"/>
+                                            <constraint firstItem="CAY-CE-GdL" firstAttribute="leading" secondItem="D0R-vr-dD7" secondAttribute="leading" constant="42" id="bFl-71-3KL"/>
                                             <constraint firstAttribute="bottom" secondItem="CAY-CE-GdL" secondAttribute="bottom" constant="13" id="fIS-tg-pVb"/>
                                             <constraint firstAttribute="trailing" secondItem="CAY-CE-GdL" secondAttribute="trailing" constant="42" id="fkI-Ue-FaX"/>
                                         </constraints>
@@ -80,6 +82,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et9-g5-2R6" userLabel="No button">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="No"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -99,6 +102,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdc-KF-chm" userLabel="Yes button">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Yes"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -122,11 +126,16 @@
                                 </subviews>
                                 <color key="backgroundColor" name="YP Background (iOS)"/>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-vI-ENW">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black (iOS)"/>
                         <color key="tintColor" name="YP Black (iOS)"/>
                         <constraints>
+                            <constraint firstItem="2XQ-vI-ENW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0dG-Ci-mZ7"/>
+                            <constraint firstItem="2XQ-vI-ENW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LPu-Zu-OA1"/>
                             <constraint firstItem="siG-SL-4KO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="amn-oP-Yxr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="siG-SL-4KO" secondAttribute="trailing" constant="20" id="daq-3s-edp"/>
                             <constraint firstItem="siG-SL-4KO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="lhR-bE-v49"/>
@@ -135,6 +144,7 @@
                     <connections>
                         <outlet property="NoButton" destination="Et9-g5-2R6" id="2ct-42-3Xg"/>
                         <outlet property="YesButton" destination="Cdc-KF-chm" id="THM-ad-Ykl"/>
+                        <outlet property="activityIndicator" destination="2XQ-vI-ENW" id="TCP-bk-R5e"/>
                         <outlet property="counterLabel" destination="zrm-0m-EVf" id="wzY-mY-Ccg"/>
                         <outlet property="imageView" destination="evh-6B-fGJ" id="h7C-US-W61"/>
                         <outlet property="textLabel" destination="CAY-CE-GdL" id="Diy-YW-O0k"/>
